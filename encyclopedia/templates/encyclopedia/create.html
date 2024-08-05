@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block body %}
+<a href="{% url 'encyclopedia:index' %}">View All Topics</a>
+    <h1>Create a new Topic</h1>
+    <div>
+    <form action="{% url 'encyclopedia:create' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit">
+    </form>
+    </div>
+
+{% endblock %}
